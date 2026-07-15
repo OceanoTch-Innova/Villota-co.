@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VILLOTA &amp; CO. | Private Advisory — Estrategia Financiera</title>
+<meta name="description" content="Firma privada de consultoría financiera para personas, profesionales, empresas y Mipymes del suroccidente colombiano. Diagnóstico, estrategia y seguimiento con estándares internacionales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101820;
+    --navy-deep:#0B1116;
+    --navy-raise:#161F29;
+    --cream:#F7F4EE;
+    --white:#FFFFFF;
+    --gold:#C8A46A;
+    --gold-soft:rgba(200,164,106,.35);
+    --gold-faint:rgba(200,164,106,.14);
+    --warm-gray:#E4DFD5;
+    --cream-muted:rgba(247,244,238,.66);
+    --cream-mid:rgba(247,244,238,.86);
+    --ink-muted:rgba(16,24,32,.64);
+    --ink-mid:rgba(16,24,32,.82);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --container:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    background:var(--cream);
+    color:var(--navy);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+    font-weight:300;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  button{font-family:inherit;background:none;border:none;cursor:pointer;color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:.005em}
+
+  ::selection{background:var(--gold-soft);color:var(--navy)}
+
+  :focus-visible{outline:1.5px solid var(--gold);outline-offset:4px}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 28px}
+  @media(min-width:900px){.container{padding:0 56px}}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.72rem;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    display:block;
+    margin-bottom:16px;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+  [data-reveal-delay="1"]{transition-delay:.08s}
+  [data-reveal-delay="2"]{transition-delay:.16s}
+  [data-reveal-delay="3"]{transition-delay:.24s}
+  [data-reveal-delay="4"]{transition-delay:.32s}
+  [data-reveal-delay="5"]{transition-delay:.4s}
+  @media(prefers-reduced-motion:reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- buttons / links ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:15px 34px;
+    font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+    border:1px solid transparent;
+    transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn--gold{background:var(--gold);color:var(--navy-deep)}
+  .btn--gold:hover{background:#dab989}
+  .btn--ghost-dark{border-color:rgba(16,24,32,.28);color:var(--navy)}
+  .btn--ghost-dark:hover{border-color:var(--navy);background:var(--navy);color:var(--cream)}
+  .btn--ghost-light{border-color:var(--gold-soft);color:var(--cream)}
+  .btn--ghost-light:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+
+  .link-arrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;
+    padding-bottom:3px;border-bottom:1px solid currentColor;
+  }
+  .link-arrow span{transition:transform .35s var(--ease)}
+  .link-arrow:hover span{transform:translateX(5px)}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:200;
+    padding:26px 0;
+    transition:padding .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav--scrolled{
+    padding:16px 0;
+    background:rgba(16,24,32,.92);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom-color:rgba(200,164,106,.18);
+  }
+  .nav__inner{
+    max-width:var(--container);margin:0 auto;padding:0 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  @media(min-width:900px){.nav__inner{padding:0 56px}}
+  .nav__logo{
+    font-family:var(--serif);color:var(--cream);
+    font-size:1.28rem;letter-spacing:.03em;line-height:1;
+    display:flex;flex-direction:column;gap:5px;
+  }
+  .nav__logo b{font-weight:500}
+  .nav__logo-sub{font-family:var(--sans);font-size:.56rem;letter-spacing:.26em;color:var(--gold);font-weight:500}
+  .nav__links{display:none;align-items:center;gap:20px}
+  .nav__links a{
+    font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-mid);
+    position:relative;padding-bottom:4px;font-weight:400;white-space:nowrap;
+    transition:color .3s var(--ease);
+  }
+  .nav__links a::after{
+    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);
+    transition:width .35s var(--ease);
+  }
+  .nav__links a:hover{color:var(--cream)}
+  .nav__links a:hover::after{width:100%}
+  .nav__links a.is-active{color:var(--cream)}
+  .nav__links a.is-active::after{width:100%}
+  @media(min-width:1180px){.nav__links{display:flex}}
+  .nav__right{display:flex;align-items:center;gap:22px}
+  .nav__cta{display:none}
+  @media(min-width:1180px){.nav__cta{display:inline-flex;padding:12px 24px}}
+  .nav__toggle{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:34px;height:34px;
+  }
+  @media(min-width:1180px){.nav__toggle{display:none}}
+  .nav__toggle span{display:block;width:22px;height:1px;background:var(--cream);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+  .nav__toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .nav__toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav__toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+  .mobile-menu{
+    position:fixed;inset:0;z-index:190;background:var(--navy-deep);
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:20px;
+    padding:28px 40px;overflow-y:auto;
+    transform:translateY(-100%);opacity:0;
+    transition:transform .5s var(--ease),opacity .4s var(--ease);
+    pointer-events:none;
+  }
+  .mobile-menu.is-open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .mobile-menu a{font-family:var(--serif);font-size:1.6rem;color:var(--cream)}
+  .mobile-menu a.btn{font-family:var(--sans);margin-top:12px}
+  body.no-scroll{overflow:hidden}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    background:var(--navy);overflow:hidden;padding:150px 0 90px;
+  }
+  .hero__ledger{position:absolute;inset:0;z-index:0;opacity:.5}
+  .hero__ledger div{position:absolute;left:0;right:0;height:1px;background:var(--gold-faint)}
+  .hero__inner{position:relative;z-index:1;max-width:var(--container);margin:0 auto;padding:0 28px;width:100%}
+  @media(min-width:900px){.hero__inner{padding:0 56px}}
+  .hero .eyebrow{margin-bottom:22px;display:block}
+  .hero__title{
+    font-size:clamp(2.35rem,5.4vw,4.35rem);
+    color:var(--cream);line-height:1.14;max-width:16.5ch;
+    font-weight:450;
+  }
+  .hero__title em{color:var(--gold);font-style:italic;font-weight:450}
+  .hero__sub{
+    margin-top:28px;max-width:44ch;color:var(--cream-mid);
+    font-size:1.05rem;line-height:1.75;font-weight:300;
+  }
+  .hero__actions{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:30px}
+  .hero__actions .link-arrow{color:var(--cream)}
+  .hero__scroll{
+    position:absolute;left:28px;bottom:34px;z-index:1;
+    display:flex;align-items:center;gap:12px;color:var(--cream-muted);
+  }
+  @media(min-width:900px){.hero__scroll{left:56px}}
+  .hero__scroll::before{
+    content:"";width:1px;height:44px;background:var(--gold-soft);
+    animation:scrollLine 2.6s var(--ease) infinite;
+  }
+  @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  .hero__scroll span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase}
+  @media(prefers-reduced-motion:reduce){.hero__scroll::before{animation:none}}
+
+  /* ---------- sections generic ---------- */
+  .section{padding:104px 0}
+  @media(min-width:900px){.section{padding:150px 0}}
+  .section--dark{background:var(--navy);color:var(--cream)}
+  .section--cream{background:var(--cream);color:var(--navy)}
+  .section--white{background:var(--white);color:var(--navy)}
+  .section .eyebrow{margin-bottom:18px;display:block}
+  .section h2{font-size:clamp(1.9rem,3.4vw,2.85rem);line-height:1.22}
+  .section--dark h2{color:var(--cream)}
+
+  /* ---------- quienes somos ---------- */
+  .split{display:grid;gap:44px}
+  @media(min-width:860px){.split{grid-template-columns:.85fr 1.7fr;gap:80px}}
+  .split__body p{
+    font-size:1.03rem;line-height:1.85;color:var(--ink-mid);max-width:56ch;font-weight:300;
+  }
+  .split__body p + p{margin-top:22px}
+  .split__body h2{margin-bottom:26px}
+
+  /* ---------- servicios ---------- */
+  .head-row{
+    display:flex;flex-direction:column;gap:18px;margin-bottom:60px;
+  }
+  @media(min-width:860px){.head-row{flex-direction:row;justify-content:space-between;align-items:flex-end}}
+  .head-row h2{max-width:16ch}
+  .head-row__note{max-width:34ch;color:var(--ink-muted);font-size:.95rem;line-height:1.7}
+  .section--dark .head-row__note{color:var(--cream-muted)}
+
+  .services-grid{display:grid;gap:1px;background:var(--warm-gray)}
+  @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:960px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+  .service-card{
+    background:var(--cream);padding:38px 34px;
+    transition:background .4s var(--ease);
+  }
+  .service-card:hover{background:var(--white)}
+  .service-card__rule{width:26px;height:1px;background:var(--gold);margin-bottom:22px}
+  .service-card h3{font-size:1.28rem;font-weight:500;margin-bottom:12px;color:var(--navy)}
+  .service-card p{font-size:.92rem;line-height:1.7;color:var(--ink-muted);font-weight:300}
+
+  /* ---------- proceso ---------- */
+  .process{position:relative}
+  .process-list{
+    display:grid;gap:52px;position:relative;
+  }
+  @media(min-width:900px){
+    .process-list{grid-template-columns:repeat(5,1fr);gap:0;padding-top:10px}
+    .process-list::before{
+      content:"";position:absolute;top:23px;left:0;right:0;height:1px;background:var(--gold-soft);
+    }
+  }
+  .process-step{position:relative;padding-right:20px}
+  .process-step__num{
+    font-family:var(--serif);font-size:1.5rem;color:var(--gold);
+    width:46px;height:46px;border:1px solid var(--gold-soft);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--navy);position:relative;z-index:1;margin-bottom:26px;
+  }
+  .process-step h3{color:var(--cream);font-size:1.18rem;font-weight:500;margin-bottom:10px}
+  .process-step p{color:var(--cream-muted);font-size:.9rem;line-height:1.7;font-weight:300;max-width:30ch}
+
+  /* ---------- por que elegirnos ---------- */
+  .why-grid{display:grid;gap:1px;background:var(--warm-gray)}
+  @media(min-width:700px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+  .why-card{background:var(--white);padding:40px 30px}
+  .why-card h3{font-size:1.12rem;font-weight:500;margin-bottom:14px;line-height:1.3}
+  .why-card p{font-size:.9rem;line-height:1.7;color:var(--ink-muted);font-weight:300}
+
+  /* ---------- sectores ---------- */
+  .sector-grid{display:grid;gap:1px;background:var(--warm-gray);border:1px solid var(--warm-gray)}
+  @media(min-width:640px){.sector-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:960px){.sector-grid{grid-template-columns:repeat(3,1fr)}}
+  .sector-card{
+    background:var(--cream);padding:32px 30px;display:flex;flex-direction:column;gap:8px;
+  }
+  .sector-card h3{font-size:1.32rem;font-weight:500}
+  .sector-card p{font-size:.86rem;color:var(--ink-muted);font-weight:300}
+
+  /* ---------- compromiso ---------- */
+  .pillars{display:grid;gap:56px}
+  @media(min-width:760px){.pillars{grid-template-columns:repeat(2,1fr);column-gap:64px}}
+  @media(min-width:1080px){.pillars{grid-template-columns:repeat(4,1fr)}}
+  .pillar{border-top:1px solid var(--gold-soft);padding-top:24px}
+  .pillar h3{color:var(--gold);font-weight:500;margin-bottom:12px;font-family:var(--sans);text-transform:uppercase;font-size:.85rem;letter-spacing:.12em}
+  .pillar p{color:var(--cream-mid);font-size:.94rem;line-height:1.75;font-weight:300}
+
+  /* ---------- faq ---------- */
+  .faq{max-width:760px;margin:0 auto}
+  .faq__item{border-bottom:1px solid var(--warm-gray)}
+  .faq__question{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding:26px 2px;text-align:left;font-family:var(--serif);font-size:1.24rem;font-weight:500;color:var(--navy);
+  }
+  .faq__icon{position:relative;width:16px;height:16px;flex:none}
+  .faq__icon::before,.faq__icon::after{content:"";position:absolute;background:var(--gold);transition:transform .35s var(--ease)}
+  .faq__icon::before{left:0;top:50%;width:16px;height:1px;transform:translateY(-50%)}
+  .faq__icon::after{top:0;left:50%;width:1px;height:16px;transform:translateX(-50%)}
+  .faq__item.is-open .faq__icon::after{transform:translateX(-50%) rotate(90deg);opacity:0}
+  .faq__panel{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+  .faq__panel p{padding:0 2px 28px;max-width:64ch;color:var(--ink-mid);font-size:.96rem;line-height:1.8;font-weight:300}
+
+  /* ---------- contacto / form ---------- */
+  .cta{background:var(--navy);padding:120px 0}
+  .cta__grid{display:grid;gap:56px;text-align:left}
+  @media(min-width:900px){.cta__grid{grid-template-columns:1fr 1fr;gap:90px;align-items:start}}
+  .cta__intro h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--cream);line-height:1.3;max-width:15ch;margin-top:20px}
+  .cta__lead{margin-top:22px;color:var(--cream-mid);font-size:1rem;line-height:1.75;max-width:38ch;font-weight:300}
+  .cta__form{display:flex;flex-direction:column;gap:24px}
+  .field{display:flex;flex-direction:column;gap:9px}
+  .field label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .field input,.field select,.field textarea{
+    background:transparent;border:none;border-bottom:1px solid rgba(247,244,238,.26);
+    color:var(--cream);font-family:var(--sans);font-size:.98rem;padding:9px 2px;font-weight:300;
+    transition:border-color .3s var(--ease);width:100%;
+  }
+  .field textarea{resize:vertical;font-family:var(--sans)}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+  .field select{
+    appearance:none;-webkit-appearance:none;-moz-appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23C8A46A' stroke-width='1.3' fill='none'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 4px center;background-size:11px;padding-right:22px;
+  }
+  .field select option{background:var(--navy);color:var(--cream)}
+  .cta__form .btn{margin-top:6px;align-self:flex-start}
+  .cta__note{font-size:.82rem;color:var(--cream-muted);font-weight:300}
+  .cta__note a{color:var(--gold);border-bottom:1px solid var(--gold-soft)}
+  .cta__success{display:none}
+  .cta__success.is-visible{display:block}
+  .cta__success h3{color:var(--cream);font-size:1.6rem;margin-bottom:12px;font-weight:500}
+  .cta__success p{color:var(--cream-mid);font-size:.96rem;line-height:1.75;max-width:40ch;font-weight:300}
+
+  /* ---------- footer ---------- */
+  .footer{background:var(--navy-deep);color:var(--cream-mid);padding:90px 0 34px;position:relative;overflow:hidden}
+  .footer-grid{display:grid;gap:56px}
+  @media(min-width:820px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .footer-brand .nav__logo{margin-bottom:18px}
+  .footer-brand p{max-width:34ch;font-size:.9rem;line-height:1.75;color:var(--cream-muted);font-weight:300}
+  .footer h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;font-weight:500}
+  .footer ul{display:flex;flex-direction:column;gap:13px}
+  .footer a{font-size:.92rem;color:var(--cream-mid);transition:color .3s var(--ease);font-weight:300}
+  .footer a:hover{color:var(--gold)}
+  .footer-bottom{
+    margin-top:80px;padding-top:28px;border-top:1px solid rgba(200,164,106,.14);
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
+    font-size:.78rem;color:var(--cream-muted);
+  }
+  .footer-bottom a{font-size:.78rem}
+
+  /* ---------- misc ---------- */
+  .stagger > *{transition-delay:calc(var(--i,0) * .09s)}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo"><b>VILLOTA &amp; CO.</b><span class="nav__logo-sub">PRIVATE ADVISORY</span></a>
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#porque">Por qué</a>
+      <a href="#sectores">Sectores</a>
+      <a href="#compromiso">Compromiso</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="nav__right">
+      <a href="#contacto" class="btn btn--gold nav__cta">Agenda una consulta</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#proceso">Proceso</a>
+  <a href="#porque">Por qué</a>
+  <a href="#sectores">Sectores</a>
+  <a href="#compromiso">Compromiso</a>
+  <a href="#faq">Preguntas</a>
+  <a href="#contacto" class="btn btn--gold">Agenda una consulta</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__ledger" id="ledger" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <span class="eyebrow" data-reveal>Private Advisory</span>
+      <h1 class="hero__title" data-reveal data-reveal-delay="1">No tomamos decisiones por impulso.<br><em>Construimos patrimonio con estrategia.</em></h1>
+      <p class="hero__sub" data-reveal data-reveal-delay="2">Asesoría financiera independiente para personas, profesionales y empresas del suroccidente colombiano. La disciplina de una firma internacional, aplicada por quienes conocen de cerca el comercio, la industria y el campo de la región.</p>
+      <div class="hero__actions" data-reveal data-reveal-delay="3">
+        <a href="#contacto" class="btn btn--gold">Agenda una consulta</a>
+        <a href="#servicios" class="link-arrow">Conoce nuestros servicios<span>→</span></a>
+      </div>
+    </div>
+    <div class="hero__scroll"><span>Scroll</span></div>
+  </section>
+
+  <!-- QUIENES SOMOS -->
+  <section class="section section--white" id="nosotros">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">Quiénes somos</span>
+      </div>
+      <div class="split__body">
+        <h2 data-reveal>Una firma independiente. No una entidad financiera.</h2>
+        <p data-reveal data-reveal-delay="1">VILLOTA &amp; CO. nace de una convicción simple: en Colombia, la asesoría financiera casi siempre viene atada a un producto por vender — un crédito, una póliza, un fondo. Nosotros no tenemos nada que vender. No somos un banco. No captamos dinero ni administramos inversiones. Somos una firma de asesoría independiente, dedicada exclusivamente a ayudar a personas, profesionales y empresas a pensar con claridad sobre su patrimonio y su futuro.</p>
+        <p data-reveal data-reveal-delay="2">Trabajamos con una metodología propia — diagnóstico, estrategia y seguimiento — que aplicamos con el mismo rigor a un profesional independiente, una empresa familiar o una operación agroindustrial del Cauca. Sin fórmulas genéricas. Sin conflictos de interés. Solo criterio, evidencia y compromiso con el resultado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section section--cream" id="servicios">
+    <div class="container">
+      <div class="head-row">
+        <div data-reveal>
+          <span class="eyebrow">Nuestros servicios</span>
+          <h2>Un servicio para cada etapa de su estrategia.</h2>
+        </div>
+        <p class="head-row__note" data-reveal data-reveal-delay="1">Nueve líneas de trabajo, pensadas para acompañar desde el primer diagnóstico hasta la ejecución del plan.</p>
+      </div>
+    </div>
+    <div class="services-grid" data-reveal>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Diagnóstico Financiero</h3><p>Lectura precisa de liquidez, endeudamiento y flujo de caja antes de decidir cualquier cosa.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Planeación Financiera Personal</h3><p>Un plan patrimonial construido a la medida de sus metas y su momento de vida.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Consultoría Financiera Empresarial</h3><p>Estructura financiera sólida para empresas que quieren crecer con orden.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Educación Financiera</h3><p>Criterio y herramientas prácticas para decidir con independencia, no con intuición.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Preparación para Créditos</h3><p>Historial, indicadores y documentación en regla para llegar al banco desde una posición de fuerza, no de urgencia.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Optimización de Costos</h3><p>Márgenes reales, gastos innecesarios identificados, rentabilidad protegida.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Análisis Financiero</h3><p>Cifras traducidas en decisiones: qué funciona, qué no, y por qué.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Modelos Financieros</h3><p>Proyecciones rigurosas para sostener decisiones de inversión o expansión.</p></div>
+      <div class="service-card"><div class="service-card__rule"></div><h3>Planeación Estratégica</h3><p>La hoja de ruta financiera detrás de cada decisión importante.</p></div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section section--dark process" id="proceso">
+    <div class="container">
+      <div class="head-row">
+        <div data-reveal>
+          <span class="eyebrow">Nuestro proceso</span>
+          <h2>Cinco pasos. Un mismo rigor.</h2>
+        </div>
+      </div>
+      <div class="process-list">
+        <div class="process-step" data-reveal><div class="process-step__num">1</div><h3>Diagnóstico</h3><p>Evaluación integral de liquidez, endeudamiento, estructura de costos y flujo de caja.</p></div>
+        <div class="process-step" data-reveal data-reveal-delay="1"><div class="process-step__num">2</div><h3>Estrategia</h3><p>Diseño de un plan financiero a la medida, con metas claras y priorizadas.</p></div>
+        <div class="process-step" data-reveal data-reveal-delay="2"><div class="process-step__num">3</div><h3>Implementación</h3><p>Ejecución disciplinada: reestructuración, optimización y control operativo.</p></div>
+        <div class="process-step" data-reveal data-reveal-delay="3"><div class="process-step__num">4</div><h3>Seguimiento</h3><p>Monitoreo constante del progreso y ajuste continuo de la estrategia.</p></div>
+        <div class="process-step" data-reveal data-reveal-delay="4"><div class="process-step__num">5</div><h3>Resultados</h3><p>Patrimonio fortalecido, decisiones más claras, tranquilidad financiera sostenida.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE ELEGIRNOS -->
+  <section class="section section--white" id="porque">
+    <div class="container">
+      <div class="head-row">
+        <div data-reveal>
+          <span class="eyebrow">¿Por qué VILLOTA &amp; CO.?</span>
+          <h2>Cuatro razones, sin clichés.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="why-grid" data-reveal>
+      <div class="why-card"><h3>Independencia total</h3><p>No vendemos productos financieros ni recibimos comisión de terceros: cada recomendación responde únicamente a su interés.</p></div>
+      <div class="why-card"><h3>Metodología, no intuición</h3><p>Un proceso estructurado y replicable — diagnóstico, estrategia, seguimiento — no recomendaciones sueltas.</p></div>
+      <div class="why-card"><h3>Rigor global, contexto regional</h3><p>Estándares de firma internacional aplicados al tejido real del suroccidente: comercio, servicios y sector agropecuario.</p></div>
+      <div class="why-card"><h3>Confidencialidad sin excepciones</h3><p>Su información financiera se trata con el mismo cuidado con el que tratamos su patrimonio.</p></div>
+    </div>
+  </section>
+
+  <!-- SECTORES -->
+  <section class="section section--cream" id="sectores">
+    <div class="container">
+      <div class="head-row">
+        <div data-reveal>
+          <span class="eyebrow">Sectores</span>
+          <h2>A quién acompañamos.</h2>
+        </div>
+      </div>
+      <div class="sector-grid" data-reveal>
+        <div class="sector-card"><h3>Personas</h3><p>Patrimonio y tranquilidad financiera.</p></div>
+        <div class="sector-card"><h3>Profesionales</h3><p>Ingresos variables, decisiones firmes.</p></div>
+        <div class="sector-card"><h3>Empresas</h3><p>Estructura para crecer con orden.</p></div>
+        <div class="sector-card"><h3>Emprendedores</h3><p>Bases sólidas desde el primer día.</p></div>
+        <div class="sector-card"><h3>Mipymes</h3><p>Costos claros, crédito accesible.</p></div>
+        <div class="sector-card"><h3>Startups</h3><p>Modelos financieros para escalar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPROMISO -->
+  <section class="section section--dark" id="compromiso">
+    <div class="container">
+      <div class="head-row">
+        <div data-reveal>
+          <span class="eyebrow">Nuestro compromiso</span>
+          <h2>Cuatro principios innegociables.</h2>
+        </div>
+      </div>
+      <div class="pillars" data-reveal>
+        <div class="pillar"><h3>Confidencialidad</h3><p>Su información se protege con el mismo rigor que su patrimonio.</p></div>
+        <div class="pillar"><h3>Integridad</h3><p>Recomendamos lo correcto, no lo conveniente.</p></div>
+        <div class="pillar"><h3>Objetividad</h3><p>Sin productos que vender, sin comisiones que proteger.</p></div>
+        <div class="pillar"><h3>Transparencia</h3><p>Procesos claros, honorarios claros, resultados medibles.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--white" id="faq">
+    <div class="container">
+      <div class="head-row" style="justify-content:center;text-align:center">
+        <div data-reveal style="margin:0 auto">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Lo que suelen preguntarnos.</h2>
+        </div>
+      </div>
+      <div class="faq" data-reveal>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">¿Qué hace una firma de consultoría financiera?<span class="faq__icon"></span></button>
+          <div class="faq__panel"><p>Diagnosticamos su situación financiera, diseñamos una estrategia a la medida y acompañamos su ejecución. No administramos fondos ni vendemos productos financieros: nuestro único interés es que usted tome mejores decisiones.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">¿Trabajan con empresas?<span class="faq__icon"></span></button>
+          <div class="faq__panel"><p>Sí. Trabajamos con empresas, Mipymes, emprendedores y negocios del sector agropecuario, con foco en estructura de costos, flujo de caja y preparación para acceder a crédito formal.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">¿Administran inversiones?<span class="faq__icon"></span></button>
+          <div class="faq__panel"><p>No. Somos una firma de asesoría, no una gestora de activos ni un banco. Nuestro trabajo es ayudarle a pensar con claridad; la ejecución de productos específicos queda en manos de las entidades reguladas correspondientes.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">¿Atienden virtualmente?<span class="faq__icon"></span></button>
+          <div class="faq__panel"><p>Sí, atendemos de forma virtual y presencial, con cobertura en Cali y la región del Cauca.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">¿Me preparan para solicitar un crédito?<span class="faq__icon"></span></button>
+          <div class="faq__panel"><p>Sí. Revisamos su historial, sus indicadores financieros y su documentación antes de que se presente ante el banco o la entidad de crédito, para que llegue con una solicitud sólida y mayores probabilidades de aprobación.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="cta" id="contacto">
+    <div class="container cta__grid">
+      <div class="cta__intro" data-reveal>
+        <span class="eyebrow">Empecemos</span>
+        <h2>Las grandes decisiones financieras comienzan con una conversación.</h2>
+        <p class="cta__lead">Cuéntenos brevemente su situación y le contactaremos para agendar la primera reunión.</p>
+      </div>
+      <div class="cta__form-wrap" data-reveal data-reveal-delay="1">
+        <form class="cta__form" id="contactForm">
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="perfil">¿Cómo le podemos ayudar?</label>
+            <select id="perfil" name="perfil">
+              <option value="personal">Finanzas personales</option>
+              <option value="empresa">Empresa / Mipyme</option>
+              <option value="agro">Sector agropecuario</option>
+              <option value="credito">Preparación para crédito</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje (opcional)</label>
+            <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold">Enviar solicitud</button>
+          <p class="cta__note">También puede escribirnos a <a href="mailto:consulta.finanzas@oceanotech.site">consulta.finanzas@oceanotech.site</a></p>
+        </form>
+        <div class="cta__success" id="ctaSuccess">
+          <h3>Gracias.</h3>
+          <p>Hemos recibido su solicitud. Nos pondremos en contacto muy pronto para agendar la primera conversación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav__logo"><b>VILLOTA &amp; CO.</b><span class="nav__logo-sub">PRIVATE ADVISORY</span></div>
+        <p>Firma privada de consultoría financiera para personas, profesionales, empresas y Mipymes del suroccidente colombiano.</p>
+      </div>
+      <div>
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#porque">Por qué elegirnos</a></li>
+          <li><a href="#sectores">Sectores</a></li>
+          <li><a href="#compromiso">Compromiso</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:consulta.finanzas@oceanotech.site">consulta.finanzas@oceanotech.site</a></li>
+          <li><a href="#contacto">Formulario de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VILLOTA &amp; CO. Todos los derechos reservados. Cali, Colombia.</span>
+      <span style="display:flex;gap:20px">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ledger lines signature texture
+  var ledger = document.getElementById('ledger');
+  var rows = 14;
+  for (var i=0;i<rows;i++){
+    var d = document.createElement('div');
+    d.style.top = (8 + i*(100/rows)) + '%';
+    ledger.appendChild(d);
+  }
+
+  // sticky nav
+  var nav = document.getElementById('nav');
+  var onScroll = function(){
+    if (window.scrollY > 30) nav.classList.add('nav--scrolled');
+    else nav.classList.remove('nav--scrolled');
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // mobile menu
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){
+    var open = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true':'false');
+    document.body.classList.toggle('no-scroll', open);
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+
+  // scroll-spy: highlight the active section in the nav
+  var spySections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.nav__links a');
+  if ('IntersectionObserver' in window && navLinks.length){
+    var spyIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var link = document.querySelector('.nav__links a[href="#' + entry.target.id + '"]');
+        if (!link) return;
+        if (entry.isIntersecting){
+          navLinks.forEach(function(l){ l.classList.remove('is-active'); });
+          link.classList.add('is-active');
+        }
+      });
+    }, {rootMargin:'-45% 0px -45% 0px'});
+    spySections.forEach(function(s){ spyIO.observe(s); });
+  }
+
+  // scroll reveal
+  var els = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -60px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  // faq accordion
+  document.querySelectorAll('.faq__item').forEach(function(item){
+    var btn = item.querySelector('.faq__question');
+    var panel = item.querySelector('.faq__panel');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq__item').forEach(function(i){
+        i.classList.remove('is-open');
+        i.querySelector('.faq__question').setAttribute('aria-expanded','false');
+        i.querySelector('.faq__panel').style.maxHeight = null;
+      });
+      if (!isOpen){
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+  // contact form (front-end only in this preview — see note to Igor)
+  var contactForm = document.getElementById('contactForm');
+  var ctaSuccess = document.getElementById('ctaSuccess');
+  if (contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      ctaSuccess.classList.add('is-visible');
+    });
+  }
+})();
+</script>
+</body>
+</html>
